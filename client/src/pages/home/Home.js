@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import './home.css'
+//import './home.css'
+
 import Typewriter from 'typewriter-effect';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import {FaUntappd} from 'react-icons/fa'
+import { MdPictureAsPdf } from "react-icons/md";
 import serviceImg1 from '../../assets/images/react.png'
 import serviceImg2 from '../../assets/images/ui.png'
 import serviceImg3 from '../../assets/images/webdesign.png'
- 
+import { ButtonWrapper, MainBtn } from "../home/Button.styles"
+
 const Home = () => {
 
     const [scrollToTop, setScrollToTop] = useState(false);
@@ -46,11 +49,11 @@ const Home = () => {
                                 /></span>
                                 from Bhubaneswar
                             </h1>
-                            <div className="mt-4">
-                                <a className="main-btn" href="./">
-                                    Get CV
-                                </a>
-                            </div>
+                            <ButtonWrapper>
+                                <MainBtn href="./">
+                                    Get CV <MdPictureAsPdf />
+                                </MainBtn>
+                            </ButtonWrapper>
                         </div>
                     </div>
                 </div>
