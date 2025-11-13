@@ -1,0 +1,15 @@
+.main-btn {
+  width: 150px;
+  margin: 30px auto 0;
+}
+.main-btn .btn-view {
+  background: none;
+  border: none;
+  margin: 0 auto;
+  width: 100%;
+  color: #e7e7e7;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}/*# sourceMappingURL=home.css.map */
