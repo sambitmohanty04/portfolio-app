@@ -4,33 +4,28 @@ import React, { useEffect, useState } from 'react'
 import Typewriter from 'typewriter-effect';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import {FaUntappd} from 'react-icons/fa'
-import { MdPictureAsPdf } from "react-icons/md";
+import { MdPictureAsPdf, MdArrowUpward } from "react-icons/md";
 import serviceImg1 from '../../assets/images/react.png'
 import serviceImg2 from '../../assets/images/ui.png'
 import serviceImg3 from '../../assets/images/webdesign.png'
-import { ButtonWrapper, MainBtn } from "../home/Button.styles"
+import { ButtonWrapper, MainBtn, ScrollTopBtn } from "../home/Button.styles"
 
 const Home = () => {
 
-    const [scrollToTop, setScrollToTop] = useState(false);
+    const [showScroll, setShowScroll] = useState(false);
 
-    useEffect(()=>{
-        window.addEventListener("scroll", () => {
-            if (window.pageYOffset > 340) {
-                setScrollToTop(true);
-            } else {
-                setScrollToTop(false);
-            }
-          });
-    },[])
+    useEffect(() => {
+        const handleScroll = () => {
+        setShowScroll(window.scrollY > 300);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
-    const bottomToTop = () => {
-        window.scroll({
-          top: 0,
-          behavior: "smooth",
-        });
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
     };
+
 
     return (
         <>
@@ -50,7 +45,7 @@ const Home = () => {
                                 from Bhubaneswar
                             </h1>
                             <ButtonWrapper>
-                                <MainBtn href="./">
+                                <MainBtn href="./Sambit_Mohanty.pdf" download>
                                     Get CV <MdPictureAsPdf />
                                 </MainBtn>
                             </ButtonWrapper>
@@ -95,7 +90,7 @@ const Home = () => {
                                             Scripting Language : <span>Javascript (Json, Ajax)</span>
                                         </div>
                                         <div className='progress-skill'>
-                                            Javascript Framework : <span>React Js (Redux, ConextAPI)</span>
+                                            Javascript Library : <span>React Js (Redux, ConextAPI)</span>
                                         </div>
                                         <div className='progress-skill'>
                                             Javascript Library : <span>Jquery</span>
@@ -309,7 +304,11 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <div className='backToTop'><FaUntappd onClick={bottomToTop} /></div>
+            {showScroll && (
+                <ScrollTopBtn onClick={scrollToTop}>
+                    <MdArrowUpward />
+                </ScrollTopBtn>
+            )}
                              
         </>
 

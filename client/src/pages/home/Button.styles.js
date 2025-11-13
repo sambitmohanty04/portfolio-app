@@ -35,3 +35,19 @@ export const MainBtn = styled.a`
     font-size: 18px;
   }`;
 
+export const ScrollTopBtn = styled.button`
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 15px;
+  background-color: #fd4766;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #222;
+  }
+`;

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './header.css'
 import { BiMenuAltRight } from 'react-icons/bi'
 import { IoMdCloseCircleOutline } from 'react-icons/io' 
+import {NavbarWrapper, Logo, Links, ToggleIcons} from '../header/Navbar.style';
 import Darkmode from '../Darkmode'
 
 const Header = () => {
@@ -19,8 +20,7 @@ const Header = () => {
       };
 
     return (
-        <>
-        
+        <>        
             <nav className={toggle ? 'navbar expanded' : 'navbar'}>
                 <div className='container'>
                     <h2 className='logo'>My Portfolio</h2>
