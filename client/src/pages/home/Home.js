@@ -9,6 +9,7 @@ import serviceImg1 from '../../assets/images/react.png'
 import serviceImg2 from '../../assets/images/ui.png'
 import serviceImg3 from '../../assets/images/webdesign.png'
 import { ButtonWrapper, MainBtn, ScrollTopBtn } from "../home/Button.styles"
+import skills from '../../data/skills.json'
 
 const Home = () => {
 
@@ -82,25 +83,13 @@ const Home = () => {
                                     </TabList>
 
                                     <TabPanel className='mt-4'>
-
-                                        <div className='progress-skill'>
-                                            Skills : <span>Html, Css, Bootstrap, Sass </span>
-                                        </div>
-                                        <div className='progress-skill'>
-                                            Scripting Language : <span>Javascript (Json, Ajax)</span>
-                                        </div>
-                                        <div className='progress-skill'>
-                                            Javascript Library : <span>React Js (Redux, ConextAPI)</span>
-                                        </div>
-                                        <div className='progress-skill'>
-                                            Javascript Library : <span>Jquery</span>
-                                        </div>
-                                        <div className='progress-skill'>
-                                            Database : <span>Firebase</span>
-                                        </div>
-                                        <div className='progress-skill'>
-                                            Tools : <span>Github</span>
-                                        </div>
+                                        <div>
+                                            {skills.map((skill, index) => (
+                                                <div className='progress-skill' key = {index}>
+                                                    {skill.category} : <span>{skill.items.join(', ')}</span>
+                                                </div>
+                                            ))}
+                                        </div>                                        
                                     </TabPanel>
                                     <TabPanel>
                                         <div className='progress-skill'>
@@ -122,7 +111,7 @@ const Home = () => {
                                             <span>+2 </span>, Dr Nayapalli Collage, Bhubaneswar (2003-2005)
                                         </div>
                                         <div className='progress-skill'>
-                                            <span>Matriculation </span>, Govt. High School, Unit-6, Bhubaneswar (2005-2010)
+                                            <span>Matricullation </span>, Govt. High School, Unit-6, Bhubaneswar (2005-2010)
                                         </div>
                                     </TabPanel>
                                     <TabPanel>

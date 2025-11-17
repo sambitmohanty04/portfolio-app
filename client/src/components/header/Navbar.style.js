@@ -20,22 +20,14 @@ export const NavbarWrapper = styled.nav`
 `;
 
 export const Logo = styled.div`
-  font-size: 18px;
-  font-weight: 600;
-  position: relative;
-  z-index: 10;
-
-  @media (max-width: 768px) {
-    position: absolute;
-    top: 30px;
-    left: 20px;
-  }
+  font-size: 22px;
+  font-weight: 700;
+  z-index: 20;
 `;
 
 export const Links = styled.ul`
   display: flex;
   list-style: none;
-  text-decoration: none;
 
   li {
     margin: 0 15px;
@@ -51,6 +43,7 @@ export const Links = styled.ul`
     }
   }
 
+  /* Mobile Menu */
   @media (max-width: 768px) {
     position: absolute;
     top: -300px;
@@ -63,8 +56,8 @@ export const Links = styled.ul`
     transition: all 0.5s ease-in-out;
 
     li {
-      margin: 15px 0;
       font-size: 24px;
+      margin: 15px 0;
     }
 
     .expanded & {
@@ -76,13 +69,28 @@ export const Links = styled.ul`
 
 export const ToggleIcons = styled.div`
   display: none;
-  font-size: 30px;
+  font-size: 32px;
   color: var(--primary-color);
   cursor: pointer;
-  position: relative;
   z-index: 20;
 
   @media (max-width: 768px) {
     display: block;
   }
+`;
+
+export const header = styled.div`
+  width: "100%",
+  padding: "10px 20px",
+  backgroundColor: "#f5f5f5",
+`;
+export const nav = styled.div`
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+`;
+export const links = styled.div` 
+    display: "flex",
+    alignItems: "center",
+    gap: "20px",
 `;

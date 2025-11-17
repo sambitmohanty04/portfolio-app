@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Frontend",
+    "items": ["HTML", "CSS", "Bootstrap", "Sass"]
+  },
+  {
+    "category": "JavaScript",
+    "items": ["ES6+", "JSON", "AJAX"]
+  },
+  {
+    "category": "Libraries & Frameworks",
+    "items": ["React JS (Redux, Context API)", "jQuery"]
+  },
+  {
+    "category": "Database",
+    "items": ["Firebase"]
+  },
+  {
+    "category": "Tools",
+    "items": ["GitHub"]
+  }
+]

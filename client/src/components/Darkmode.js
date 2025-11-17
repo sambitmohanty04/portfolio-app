@@ -1,16 +1,14 @@
 import React, {useState, useEffect} from 'react'
-import { BsToggleOn, BsMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
+import { BsMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
 
 const Darkmode = () => {
 
   const [darkMode, setDarkMode] = useState(true); // default dark
 
-  // Function to toggle dark/light mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
-  // Update CSS variables when darkMode changes
   useEffect(() => {
     const root = document.documentElement;
 
@@ -23,8 +21,8 @@ const Darkmode = () => {
       root.style.setProperty("--gray-color", "#959595");
       root.style.setProperty("--primary-text", "#fd4766");
       root.style.setProperty("--text-white", "#fff");
+      root.style.setProperty("--link-color", "#fff");
     } else {
-      // Light mode colors
       root.style.setProperty("--primary-color", "#1c99fe");
       root.style.setProperty("--secondary-color", "#f5f5f5");
       root.style.setProperty("--bg-dark-blue", "#eaeaea");
@@ -33,6 +31,7 @@ const Darkmode = () => {
       root.style.setProperty("--gray-color", "#666");
       root.style.setProperty("--primary-text", "#1c99fe");
       root.style.setProperty("--text-white", "#000");
+      root.style.setProperty("--link-color", "#241031ff");
     }
   }, [darkMode]);
 
