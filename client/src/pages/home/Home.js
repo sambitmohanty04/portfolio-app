@@ -10,6 +10,7 @@ import serviceImg2 from '../../assets/images/ui.png'
 import serviceImg3 from '../../assets/images/webdesign.png'
 import { ButtonWrapper, MainBtn, ScrollTopBtn } from "../home/Button.styles"
 import skills from '../../data/skills.json'
+import experience from '../../data/experience.json'
 
 const Home = () => {
 
@@ -92,15 +93,19 @@ const Home = () => {
                                         </div>                                        
                                     </TabPanel>
                                     <TabPanel>
-                                        <div className='progress-skill'>
-                                            <h6>Role :</h6>
-                                            <p> <span><b>UI Developer, Qtonix Software Pvt. Ltd</b></span> <br /><span>From 06th June 2018 to 02nd Feb 2023</span></p>
-
-                                        </div>
-                                        <div className='progress-skill'>
-                                            <h6>Role :</h6>
-                                            <p> <span><b>PCF Team Head, Qtonix Software Pvt. Ltd</b></span> <br /><span>From 07th July 2013 to 15th Jan 2018</span></p>
-
+                                        <div>
+                                            { experience.map((item, index) => (
+                                                <div className="progress-skill" key={index}>
+                                                <h6>Role :</h6>
+                                                <p>
+                                                    <span>
+                                                    <b><span className='text-primary'>{item.role}</span>, {item.company}</b>
+                                                    </span>
+                                                    <br />
+                                                    <span>From {item.from} to {item.to}</span>
+                                                </p>
+                                                </div>
+                                            ))}
                                         </div>
                                     </TabPanel>
                                     <TabPanel>
@@ -146,7 +151,7 @@ const Home = () => {
                                 <div className="card-body text-md-start text-center">
                                     {/* <i class="fa fa-wrench img-fluid" aria-hidden="true"></i> */}
                                     <img src={serviceImg1} alt="img" className="img-fluid text-center" />
-                                    <h3>React develment</h3>
+                                    <h4>React development</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                 </div>
                             </div>
@@ -155,7 +160,7 @@ const Home = () => {
                             <div className="card">
                                 <div className="card-body text-md-start text-center">
                                     <img src={serviceImg2} alt="img" className="img-fluid" />
-                                    <h3>UI development</h3>
+                                    <h4>UI development</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                 </div>
                             </div>
@@ -164,7 +169,7 @@ const Home = () => {
                             <div className="card">
                                 <div className="card-body text-md-start text-center">
                                     <img src={serviceImg3} alt="img" className="img-fluid" />
-                                    <h3>UI design</h3>
+                                    <h4>UI design</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                 </div>
                             </div>
@@ -177,7 +182,7 @@ const Home = () => {
                                         alt="img"
                                         className="img-fluid"
                                     />
-                                    <h3>Website Maintainance</h3>
+                                    <h4>Website Maintainance</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                 </div>
                             </div>

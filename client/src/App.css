@@ -11,6 +11,7 @@
     --primary-color:#fd4766;
     --secondary-color:#0e1525;
     --bg-dark-blue:#020d26;
+    --bg-light-blue:#001d5f;
     --bg-dark-deepblue:#08022d;
     --bg-white:#fff;
     --gray-color:#959595;
@@ -275,11 +276,14 @@ button {
     background-color: var(--bg-dark-deepblue);
 }
 .service-wrapper .card {
-    background-color: var(--bg-dark-blue);
+    background-color: var(--bg-light-blue);
     cursor: pointer;
     transition: transform 0.65s cubic-bezier(0.05, 0.2, 0.1, 1);
     box-shadow: 0.65s cubic-bezier(0.05, 0.2, 0.1, 1);
     text-align: center;
+}
+.service-wrapper .card h4 {
+    font-size: 18px;
 }
 .service-wrapper .card:hover {
     box-shadow: 0 0px 70px 0 rgba(253 71 102 / 5% );
@@ -443,7 +447,7 @@ button {
   font-size: 15px;
   color: var(--text-gray);
   margin-bottom: 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-bottom: 20px;
   display: block;
   letter-spacing: 2px;
